@@ -1,236 +1,227 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2639
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AppleColorEmoji;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Óliva Cocina - Menú de Viandas</title>
+  <style>
+    :root {
+      --primary: #3b4e32;
+      --accent: #c07028;
+      --bg: #faf6f0;
+      --card-bg: #ffffff;
+      --text: #2c2c2c;
+    }
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="es">\
-<head>\
-  <meta charset="UTF-8">\
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-  <title>\'d3liva Cocina - Men\'fa de Viandas</title>\
-  <style>\
-    :root \{\
-      --primary: #3b4e32;\
-      --accent: #c07028;\
-      --bg: #faf6f0;\
-      --card-bg: #ffffff;\
-      --text: #2c2c2c;\
-    \}\
-\
-    * \{ box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; \}\
-    body \{ background-color: var(--bg); color: var(--text); padding-bottom: 90px; \}\
-\
-    header \{\
-      background-color: var(--primary);\
-      color: white;\
-      text-align: center;\
-      padding: 2rem 1rem;\
-    \}\
-    header h1 \{ font-size: 2.2rem; letter-spacing: 2px; \}\
-    header p \{ font-size: 0.95rem; opacity: 0.9; margin-top: 4px; \}\
-\
-    .container \{ max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; \}\
-    \
-    .promo-banner \{\
-      background: #e2ebdd;\
-      border: 1px solid #b4c8a8;\
-      padding: 1rem;\
-      border-radius: 10px;\
-      text-align: center;\
-      margin-bottom: 1.5rem;\
-    \}\
-    .promo-banner strong \{ color: var(--primary); \}\
-\
-    .grid \{\
-      display: grid;\
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\
-      gap: 1.5rem;\
-    \}\
-\
-    .card \{\
-      background: var(--card-bg);\
-      border-radius: 12px;\
-      overflow: hidden;\
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);\
-      display: flex;\
-      flex-direction: column;\
-      justify-content: space-between;\
-    \}\
-    \
-    .card-img \{\
-      width: 100%;\
-      height: 180px;\
-      object-fit: cover;\
-      background-color: #eee;\
-    \}\
-\
-    .card-body \{\
-      padding: 1rem;\
-      display: flex;\
-      flex-direction: column;\
-      flex-grow: 1;\
-    \}\
-\
-    .card h3 \{ color: var(--primary); font-size: 1.15rem; margin-bottom: 0.4rem; \}\
-    .card p \{ font-size: 0.85rem; color: #666; margin-bottom: 0.8rem; flex-grow: 1; \}\
-    \
-    .card-meta \{\
-      display: flex;\
-      justify-content: space-between;\
-      align-items: center;\
-      margin-bottom: 1rem;\
-    \}\
-    .weight \{ font-weight: bold; color: #888; font-size: 0.8rem; \}\
-    .price \{ font-weight: bold; color: var(--accent); font-size: 1.1rem; \}\
-\
-    .controls \{ display: flex; align-items: center; justify-content: space-between; background: #f0f4ee; padding: 6px 12px; border-radius: 20px; \}\
-    .btn-qty \{\
-      background: var(--primary);\
-      color: white;\
-      border: none;\
-      width: 28px;\
-      height: 28px;\
-      border-radius: 50%;\
-      font-size: 1.1rem;\
-      cursor: pointer;\
-    \}\
-    .qty \{ font-weight: bold; font-size: 1rem; \}\
-\
-    .cart-bar \{\
-      position: fixed;\
-      bottom: 0;\
-      left: 0;\
-      right: 0;\
-      background: white;\
-      padding: 1rem 1.5rem;\
-      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);\
-      display: flex;\
-      justify-content: space-between;\
-      align-items: center;\
-      max-width: 900px;\
-      margin: 0 auto;\
-      border-top-left-radius: 12px;\
-      border-top-right-radius: 12px;\
-    \}\
-    .btn-whatsapp \{\
-      background-color: #25d366;\
-      color: white;\
-      border: none;\
-      padding: 0.8rem 1.5rem;\
-      border-radius: 25px;\
-      font-weight: bold;\
-      font-size: 1rem;\
-      cursor: pointer;\
-    \}\
-  </style>\
-</head>\
-<body>\
-\
-  <header>\
-    <h1>\'d3LIVA COCINA</h1>\
-    <p>Gourmet Kitchen \'95 For Your House</p>\
-  </header>\
-\
-  <div class="container">\
-    <div class="promo-banner">\
-      <p>
-\f1 \uc0\u55357 \u56613 
-\f0  <strong>PROMO PACKS:</strong> 5 a 9 viandas x $10.500 c/u | 10+ viandas x $10.000 c/u <em>(\'a1Ahorr\'e1s $5.000!)</em></p>\
-      <small>Porciones de 500g \'95 Entrega congelada lista para microondas</small>\
-    </div>\
-\
-    <div class="grid" id="menu-grid"></div>\
-  </div>\
-\
-  <div class="cart-bar">\
-    <div>\
-      <span>Viandas elegidas: <strong id="total-count">0</strong></span><br>\
-      <span>Total estimativo: <strong id="total-price" style="color:var(--accent); font-size: 1.2rem;">$0</strong></span>\
-    </div>\
-    <button class="btn-whatsapp" onclick="sendWhatsApp()">Pedir x WhatsApp</button>\
-  </div>\
-\
-  <script>\
-    const menu = [\
-      \{ id: 1, name: "Bondiola desmenuzada con boniato", desc: "Bondiola tiernizada con guarnici\'f3n de boniatos.", price: 10500, img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400" \},\
-      \{ id: 2, name: "Wok de carne", desc: "Roast beef, cebolla, morrones y zanahoria.", price: 10500, img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400" \},\
-      \{ id: 3, name: "Pollo pata muslo al disco", desc: "Pollo, cebolla, morrones, zanahoria y pur\'e9 de tomate.", price: 10500, img: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400" \},\
-      \{ id: 4, name: "Pastel de carne", desc: "Roast beef picado, cebolla, morrones y boniato.", price: 10500, img: "https://images.unsplash.com/photo-1584947897530-5ffc696e812f?w=400" \},\
-      \{ id: 5, name: "Pollo teriyaki con arroz", desc: "Pollo en salsa teriyaki acompa\'f1ado de arroz blanco.", price: 10500, img: "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400" \},\
-      \{ id: 6, name: "Tarta de calabaza", desc: "Porci\'f3n individual con masa casera.", price: 10500, img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400" \}\
-    ];\
-\
-    const cart = \{\};\
-\
-    function renderMenu() \{\
-      const container = document.getElementById('menu-grid');\
-      container.innerHTML = menu.map(item => `\
-        <div class="card">\
-          <img src="$\{item.img\}" alt="$\{item.name\}" class="card-img">\
-          <div class="card-body">\
-            <h3>$\{item.name\}</h3>\
-            <p>$\{item.desc\}</p>\
-            <div class="card-meta">\
-              <span class="weight">500g</span>\
-              <span class="price">$$\{item.price.toLocaleString('es-AR')\}</span>\
-            </div>\
-            <div class="controls">\
-              <button class="btn-qty" onclick="updateQty($\{item.id\}, -1)">-</button>\
-              <span class="qty" id="qty-$\{item.id\}">0</span>\
-              <button class="btn-qty" onclick="updateQty($\{item.id\}, 1)">+</button>\
-            </div>\
-          </div>\
-        </div>\
-      `).join('');\
-    \}\
-\
-    function updateQty(id, change) \{\
-      cart[id] = (cart[id] || 0) + change;\
-      if (cart[id] < 0) cart[id] = 0;\
-      document.getElementById(`qty-$\{id\}`).innerText = cart[id];\
-      calculateTotal();\
-    \}\
-\
-    function calculateTotal() \{\
-      const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);\
-      let pricePerUnit = 10500;\
-      \
-      if (totalCount >= 10) \{\
-        pricePerUnit = 10000;\
-      \}\
-\
-      const totalPrice = totalCount * pricePerUnit;\
-\
-      document.getElementById('total-count').innerText = totalCount;\
-      document.getElementById('total-price').innerText = `$$\{totalPrice.toLocaleString('es-AR')\}`;\
-    \}\
-\
-    function sendWhatsApp() \{\
-      const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);\
-      if (totalCount < 5) \{\
-        alert("El pedido m\'ednimo es de 5 viandas.");\
-        return;\
-      \}\
-\
-      let message = "Hola \'d3liva Cocina! Quisiera hacer el siguiente pedido:\\n\\n";\
-      menu.forEach(item => \{\
-        if (cart[item.id] > 0) \{\
-          message += `\'95 $\{item.name\} x$\{cart[item.id]\}\\n`;\
-        \}\
-      \});\
-\
-      const pricePerUnit = totalCount >= 10 ? 10000 : 10500;\
-      message += `\\nTotal viandas: $\{totalCount\}`;\
-      message += `\\nTotal a pagar: $$\{(totalCount * pricePerUnit).toLocaleString('es-AR')\}`;\
-\
-      const phone = "5491178204603";\
-      window.open(`https://wa.me/$\{phone\}?text=$\{encodeURIComponent(message)\}`, '_blank');\
-    \}\
-\
-    renderMenu();\
-  </script>\
-</body>\
-</html>}
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding-bottom: 90px; }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 { font-size: 2.2rem; letter-spacing: 2px; }
+    header p { font-size: 0.95rem; opacity: 0.9; margin-top: 4px; }
+
+    .container { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; }
+    
+    .promo-banner {
+      background: #e2ebdd;
+      border: 1px solid #b4c8a8;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .promo-banner strong { color: var(--primary); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background-color: #eee;
+    }
+
+    .card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.4rem; }
+    .card p { font-size: 0.85rem; color: #666; margin-bottom: 0.8rem; flex-grow: 1; }
+    
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .weight { font-weight: bold; color: #888; font-size: 0.8rem; }
+    .price { font-weight: bold; color: var(--accent); font-size: 1.1rem; }
+
+    .controls { display: flex; align-items: center; justify-content: space-between; background: #f0f4ee; padding: 6px 12px; border-radius: 20px; }
+    .btn-qty {
+      background: var(--primary);
+      color: white;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .qty { font-weight: bold; font-size: 1rem; }
+
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    .btn-whatsapp {
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ÓLIVA COCINA</h1>
+    <p>Gourmet Kitchen • For Your House</p>
+  </header>
+
+  <div class="container">
+    <div class="promo-banner">
+      <p>🔥 <strong>PROMO PACKS:</strong> 5 a 9 viandas x $10.500 c/u | 10+ viandas x $10.000 c/u <em>(¡Ahorrás $5.000!)</em></p>
+      <small>Porciones de 500g • Entrega congelada lista para microondas</small>
+    </div>
+
+    <div class="grid" id="menu-grid"></div>
+  </div>
+
+  <div class="cart-bar">
+    <div>
+      <span>Viandas elegidas: <strong id="total-count">0</strong></span><br>
+      <span>Total estimativo: <strong id="total-price" style="color:var(--accent); font-size: 1.2rem;">$0</strong></span>
+    </div>
+    <button class="btn-whatsapp" onclick="sendWhatsApp()">Pedir x WhatsApp</button>
+  </div>
+
+  <script>
+    const menu = [
+      { id: 1, name: "Bondiola desmenuzada con boniato", desc: "Bondiola tiernizada con guarnición de boniatos.", price: 10500, img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400" },
+      { id: 2, name: "Wok de carne", desc: "Roast beef, cebolla, morrones y zanahoria.", price: 10500, img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400" },
+      { id: 3, name: "Pollo pata muslo al disco", desc: "Pollo, cebolla, morrones, zanahoria y puré de tomate.", price: 10500, img: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400" },
+      { id: 4, name: "Pastel de carne", desc: "Roast beef picado, cebolla, morrones y boniato.", price: 10500, img: "https://images.unsplash.com/photo-1584947897530-5ffc696e812f?w=400" },
+      { id: 5, name: "Pollo teriyaki con arroz", desc: "Pollo en salsa teriyaki acompañado de arroz blanco.", price: 10500, img: "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400" },
+      { id: 6, name: "Tarta de calabaza", desc: "Porción individual con masa casera.", price: 10500, img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400" }
+    ];
+
+    const cart = {};
+
+    function renderMenu() {
+      const container = document.getElementById('menu-grid');
+      container.innerHTML = menu.map(item => `
+        <div class="card">
+          <img src="${item.img}" alt="${item.name}" class="card-img">
+          <div class="card-body">
+            <h3>${item.name}</h3>
+            <p>${item.desc}</p>
+            <div class="card-meta">
+              <span class="weight">500g</span>
+              <span class="price">$${item.price.toLocaleString('es-AR')}</span>
+            </div>
+            <div class="controls">
+              <button class="btn-qty" onclick="updateQty(${item.id}, -1)">-</button>
+              <span class="qty" id="qty-${item.id}">0</span>
+              <button class="btn-qty" onclick="updateQty(${item.id}, 1)">+</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function updateQty(id, change) {
+      cart[id] = (cart[id] || 0) + change;
+      if (cart[id] < 0) cart[id] = 0;
+      document.getElementById(`qty-${id}`).innerText = cart[id];
+      calculateTotal();
+    }
+
+    function calculateTotal() {
+      const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);
+      let pricePerUnit = 10500;
+      
+      if (totalCount >= 10) {
+        pricePerUnit = 10000;
+      }
+
+      const totalPrice = totalCount * pricePerUnit;
+
+      document.getElementById('total-count').innerText = totalCount;
+      document.getElementById('total-price').innerText = `$${totalPrice.toLocaleString('es-AR')}`;
+    }
+
+    function sendWhatsApp() {
+      const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);
+      if (totalCount < 5) {
+        alert("El pedido mínimo es de 5 viandas.");
+        return;
+      }
+
+      let message = "Hola Óliva Cocina! Quisiera hacer el siguiente pedido:\n\n";
+      menu.forEach(item => {
+        if (cart[item.id] > 0) {
+          message += `• ${item.name} x${cart[item.id]}\n`;
+        }
+      });
+
+      const pricePerUnit = totalCount >= 10 ? 10000 : 10500;
+      message += `\nTotal viandas: ${totalCount}`;
+      message += `\nTotal a pagar: $${(totalCount * pricePerUnit).toLocaleString('es-AR')}`;
+
+      const phone = "5491178204603";
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    renderMenu();
+  </script>
+</body>
+</html>
