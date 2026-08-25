@@ -26,7 +26,25 @@
       font-family: 'Montserrat', sans-serif;
       padding-bottom: 100px;
     }
+  <!-- Header Hero -->
+    <header class="sticky top-0 z-40 glass-header border-b border-oliva-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3.5">
+                <!-- Imagen del logo original -->
+                <img src="etiqueta.jpg" alt="Óliva Cocina" class="h-12 w-auto object-contain rounded-xl logo-img shadow-sm" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-12 h-12 rounded-2xl bg-oliva-500 flex items-center justify-center text-white shadow-md\'><i class=\'fa-solid font-bold text-xl fa-utensils\'></i></div>' + this.parentElement.innerHTML.replace(this.outerHTML, '');">
+                
+                <div class="main-title-container">
+                    <!-- Título expandido horizontalmente con mayor tracking y ligera escala en X -->
+                    <h1 class="main-title text-2xl sm:text-3xl font-black text-oliva-800 tracking-[0.18em] uppercase leading-none transform origin-left scale-x-[1.05]">
+                        <span class="text-terracota-500 font-serif italic lowercase text-xl sm:text-2xl mr-1 font-normal tracking-normal">menú</span> VIANDAS
+                    </h1>
+                    <p class="text-xs font-bold text-oliva-600 mt-1 tracking-[0.25em] uppercase">Oliva Cocina • Artesanal</p>
+                </div>
+            </div>
 
+            <!-- Total Counter & Cart CTA -->
+            <div class="flex items-center gap-3">
+<!-- ... existing code ... -
     /* ENCABEZADO CON LA IMAGEN REAL DEL LOGO */
     header {
       text-align: center;
