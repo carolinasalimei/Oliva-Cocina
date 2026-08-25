@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,17 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Óliva Cocina - Menú Viandas</title>
   
-  <!-- Fuentes para replicar el folleto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-color: #eacab7;
+      --bg-color: #f7f1eb;
       --olive-green: #485236;
       --text-dark: #2b2b2b;
-      --card-bg: #f5dfd2;
+      --card-bg: #ffffff;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,45 +27,29 @@
       padding-bottom: 100px;
     }
 
-    /* HEADER IDENTICO AL LOGO */
+    /* ENCABEZADO CON LA IMAGEN REAL DEL LOGO */
     header {
       text-align: center;
-      padding: 2.5rem 1rem 1rem 1rem;
+      padding: 2rem 1rem 1rem 1rem;
     }
 
-    .brand-header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .sub-title {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--olive-green);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      line-height: 1.2;
-      width: 100px;
-      text-align: center;
-    }
-
-    .logo-oliva {
-      width: 55px;
+    .logo-img {
+      max-width: 320px;
+      width: 90%;
       height: auto;
+      display: block;
+      margin: 0 auto;
+      mix-blend-mode: multiply; /* Fusiona el fondo blanco de la foto con el fondo del sitio */
     }
 
     .main-title-container {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
 
     .main-title {
       font-family: 'Oswald', sans-serif;
       color: var(--olive-green);
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 700;
@@ -76,11 +60,11 @@
       font-weight: 300;
       font-style: italic;
       text-transform: lowercase;
-      font-size: 2.2rem;
+      font-size: 2rem;
       letter-spacing: 0;
     }
 
-    /* CONTENEDOR Y PROMO */
+    /* CONTENEDOR Y CAJA DE PRECIOS */
     .container {
       max-width: 850px;
       margin: 1rem auto;
@@ -96,7 +80,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.4);
     }
 
     .price-item {
@@ -113,7 +97,7 @@
       font-weight: 600;
     }
 
-    /* GRID DE CARDS */
+    /* GRID DE TARJETAS */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -127,7 +111,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(72, 82, 54, 0.2);
+      border: 1px solid rgba(72, 82, 54, 0.15);
     }
 
     .card-img {
@@ -147,7 +131,7 @@
     .card h3 {
       font-family: 'Oswald', sans-serif;
       color: var(--olive-green);
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       letter-spacing: 0.5px;
       margin-bottom: 0.3rem;
     }
@@ -163,7 +147,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: var(--bg-color);
+      background: #f0eae1;
       padding: 4px 10px;
       border-radius: 20px;
       border: 1px solid var(--olive-green);
@@ -182,7 +166,7 @@
 
     .qty { font-weight: 700; font-size: 0.9rem; }
 
-    /* FOOTER / BARRA COMPRA */
+    /* BARRA INFERIOR DEL CARRITO */
     .cart-bar {
       position: fixed;
       bottom: 0;
@@ -217,16 +201,8 @@
 <body>
 
   <header>
-    <div class="brand-header">
-      <div class="sub-title">GOURMET<br>KITCHEN</div>
-      <!-- Logo Oliva Vectorial -->
-      <svg class="logo-oliva" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M78 4 C50 25, 45 45, 45 45" stroke="#485236" stroke-width="8" stroke-linecap="round"/>
-        <path d="M50 40 C25 40, 15 75, 35 110 C55 140, 85 120, 80 80 C75 45, 60 40, 50 40 Z" fill="#485236"/>
-        <ellipse cx="52" cy="78" rx="8" ry="18" fill="#eacab7" transform="rotate(-15 52 78)"/>
-      </svg>
-      <div class="sub-title">FOR YOUR<br>HOUSE</div>
-    </div>
+    <!-- Imagen del logo original -->
+    <img src="etiqueta.png" alt="Óliva Cocina" class="logo-img">
 
     <div class="main-title-container">
       <h1 class="main-title"><span>menú</span> VIANDAS</h1>
@@ -339,4 +315,3 @@
   </script>
 </body>
 </html>
-
