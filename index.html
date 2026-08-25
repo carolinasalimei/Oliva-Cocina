@@ -146,13 +146,14 @@
   </div>
 
   <script>
+
     const menu = [
-      { id: 1, name: "Bondiola desmenuzada con boniato", desc: "Bondiola tiernizada con guarnición de boniatos.", price: 10500, img: "img/bondiola.jpg" },
-      { id: 2, name: "Wok de carne", desc: "Roast beef, cebolla, morrones y zanahoria.", price: 10500, img: "img/wok.jpg" },
-      { id: 3, name: "Pollo pata muslo al disco", desc: "Pollo, cebolla, morrones, zanahoria y puré de tomate.", price: 10500, img: "img/pollo-disco.jpg" },
-      { id: 4, name: "Pastel de carne", desc: "Roast beef picado, cebolla, morrones y boniato.", price: 10500, img: "img/pastel-carne.jpg" },
-      { id: 5, name: "Pollo teriyaki con arroz", desc: "Pollo en salsa teriyaki acompañado de arroz blanco.", price: 10500, img: "img/pollo-teriyaki.jpg" },
-      { id: 6, name: "Tarta de calabaza", desc: "Porción individual con masa casera.", price: 10500, img: "img/tarta-calabaza.jpg" }
+      { id: 1, name: "Bondiola desmenuzada con boniato", desc: "Bondiola tiernizada con guarnición de boniatos.", price: 10500, img: "bondiola.jpg" },
+      { id: 2, name: "Wok de carne", desc: "Roast beef, cebolla, morrones y zanahoria.", price: 10500, img: "wok.jpg" },
+      { id: 3, name: "Pollo pata muslo al disco", desc: "Pollo, cebolla, morrones, zanahoria y puré de tomate.", price: 10500, img: "pollo-disco.jpg" },
+      { id: 4, name: "Pastel de carne", desc: "Roast beef picado, cebolla, morrones y boniato.", price: 10500, img: "pastel-carne.jpeg" },
+      { id: 5, name: "Pollo teriyaki con arroz", desc: "Pollo en salsa teriyaki acompañado de arroz blanco.", price: 10500, img: "pollo-teriyaki.jpeg" },
+      { id: 6, name: "Tarta de calabaza", desc: "Porción individual con masa casera.", price: 10500, img: "tarta-calabaza.jpg" }
     ];
 
     const cart = {};
@@ -161,7 +162,7 @@
       const container = document.getElementById('menu-grid');
       container.innerHTML = menu.map(item => `
         <div class="card">
-          <img src="${item.img}" alt="${item.name}" class="card-img" onerror="this.src='https://via.placeholder.com/400x180?text=Sin+Imagen'">
+          <img src="${item.img}" alt="${item.name}" class="card-img" onerror="this.onerror=null; this.src='https://placehold.co/400x180?text=Foto+Vianda';">
           <div class="card-body">
             <h3>${item.name}</h3>
             <p>${item.desc}</p>
@@ -223,6 +224,8 @@
     }
 
     renderMenu();
+
+   
   </script>
 </body>
 </html>
