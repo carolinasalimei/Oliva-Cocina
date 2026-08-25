@@ -3,56 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Óliva Cocina - Menú de Viandas</title>
+  <title>Óliva Cocina - Menú Viandas</title>
   
-  <!-- Carga de la tipografía estilo Monospace -->
+  <!-- Fuentes para replicar el folleto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #3b4e32;
-      --accent: #c07028;
-      --bg: #faf6f0;
-      --card-bg: #ffffff;
-      --text: #2c2c2c;
+      --bg-color: #eacab7;
+      --olive-green: #485236;
+      --text-dark: #2b2b2b;
+      --card-bg: #f5dfd2;
     }
 
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
-      font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-dark);
+      font-family: 'Montserrat', sans-serif;
+      padding-bottom: 100px;
     }
 
-    body { background-color: var(--bg); color: var(--text); padding-bottom: 90px; }
-
+    /* HEADER IDENTICO AL LOGO */
     header {
-      background-color: var(--primary);
-      color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem 1rem 1rem;
     }
-    header h1 { font-size: 2rem; letter-spacing: 1px; font-weight: 700; }
-    header p { font-size: 0.9rem; opacity: 0.9; margin-top: 6px; }
 
-    .container { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; }
-    
-    .promo-banner {
-      background: #e2ebdd;
-      border: 1px solid #b4c8a8;
+    .brand-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .sub-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--olive-green);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      width: 100px;
+      text-align: center;
+    }
+
+    .logo-oliva {
+      width: 55px;
+      height: auto;
+    }
+
+    .main-title-container {
+      margin-top: 1.5rem;
+    }
+
+    .main-title {
+      font-family: 'Oswald', sans-serif;
+      color: var(--olive-green);
+      font-size: 2.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .main-title span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-style: italic;
+      text-transform: lowercase;
+      font-size: 2.2rem;
+      letter-spacing: 0;
+    }
+
+    /* CONTENEDOR Y PROMO */
+    .container {
+      max-width: 850px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
+
+    .price-box {
+      border: 1.5px solid var(--olive-green);
       padding: 1rem;
-      border-radius: 10px;
+      border-radius: 8px;
       text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 0.88rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: rgba(255,255,255,0.15);
     }
-    .promo-banner strong { color: var(--primary); }
 
+    .price-item {
+      font-family: 'Oswald', sans-serif;
+      color: var(--olive-green);
+      font-size: 1.4rem;
+    }
+
+    .price-item small {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* GRID DE CARDS */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
     }
 
@@ -60,17 +124,16 @@
       background: var(--card-bg);
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      border: 1px solid rgba(72, 82, 54, 0.2);
     }
-    
+
     .card-img {
       width: 100%;
-      height: 180px;
+      height: 170px;
       object-fit: cover;
-      background-color: #eee;
     }
 
     .card-body {
@@ -78,75 +141,109 @@
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-    }
-
-    .card h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 0.4rem; font-weight: 600; }
-    .card p { font-size: 0.8rem; color: #555; margin-bottom: 0.8rem; flex-grow: 1; }
-    
-    .card-meta {
-      display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
     }
-    .weight { font-weight: 600; color: #888; font-size: 0.75rem; }
-    .price { font-weight: 700; color: var(--accent); font-size: 1rem; }
 
-    .controls { display: flex; align-items: center; justify-content: space-between; background: #f0f4ee; padding: 6px 12px; border-radius: 20px; }
+    .card h3 {
+      font-family: 'Oswald', sans-serif;
+      color: var(--olive-green);
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.3rem;
+    }
+
+    .card p {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-color);
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--olive-green);
+    }
+
     .btn-qty {
-      background: var(--primary);
+      background: var(--olive-green);
       color: white;
       border: none;
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
-      font-size: 1.1rem;
+      font-size: 1rem;
       cursor: pointer;
-      font-family: inherit;
     }
-    .qty { font-weight: 700; font-size: 0.95rem; }
 
+    .qty { font-weight: 700; font-size: 0.9rem; }
+
+    /* FOOTER / BARRA COMPRA */
     .cart-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: white;
-      padding: 1rem 1.5rem;
-      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+      background: var(--olive-green);
+      color: white;
+      padding: 0.9rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 900px;
+      max-width: 850px;
       margin: 0 auto;
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
-      font-size: 0.85rem;
     }
+
     .btn-whatsapp {
-      background-color: #25d366;
-      color: white;
+      background-color: #ffffff;
+      color: var(--olive-green);
       border: none;
-      padding: 0.8rem 1.5rem;
+      padding: 0.7rem 1.3rem;
       border-radius: 25px;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       cursor: pointer;
-      font-family: inherit;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>ÓLIVA COCINA</h1>
-    <p>Gourmet Kitchen • For Your House</p>
+    <div class="brand-header">
+      <div class="sub-title">GOURMET<br>KITCHEN</div>
+      <!-- Logo Oliva Vectorial -->
+      <svg class="logo-oliva" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M78 4 C50 25, 45 45, 45 45" stroke="#485236" stroke-width="8" stroke-linecap="round"/>
+        <path d="M50 40 C25 40, 15 75, 35 110 C55 140, 85 120, 80 80 C75 45, 60 40, 50 40 Z" fill="#485236"/>
+        <ellipse cx="52" cy="78" rx="8" ry="18" fill="#eacab7" transform="rotate(-15 52 78)"/>
+      </svg>
+      <div class="sub-title">FOR YOUR<br>HOUSE</div>
+    </div>
+
+    <div class="main-title-container">
+      <h1 class="main-title"><span>menú</span> VIANDAS</h1>
+    </div>
   </header>
 
   <div class="container">
-    <div class="promo-banner">
-      <p>🔥 <strong>PROMO PACKS:</strong> 5 a 9 viandas x $10.500 c/u | 10+ viandas x $10.000 c/u <em>(¡Ahorrás $5.000!)</em></p>
-      <small>Porciones de 500g • Entrega congelada lista para microondas</small>
+    <div class="price-box">
+      <div class="price-item">
+        <small>5 MENÚS</small>
+        $11.000 <span style="font-size:0.9rem">c/u</span>
+      </div>
+      <div style="height:30px; border-left:1px solid var(--olive-green)"></div>
+      <div class="price-item">
+        <small>10 MENÚS</small>
+        $10.000 <span style="font-size:0.9rem">c/u</span>
+      </div>
     </div>
 
     <div class="grid" id="menu-grid"></div>
@@ -154,20 +251,23 @@
 
   <div class="cart-bar">
     <div>
-      <span>Viandas elegidas: <strong id="total-count">0</strong></span><br>
-      <span>Total estimativo: <strong id="total-price" style="color:var(--accent); font-size: 1.1rem;">$0</strong></span>
+      <span style="font-size:0.85rem;">Total viandas: <strong id="total-count">0</strong></span><br>
+      <span style="font-size:1.1rem; font-weight:700;">Total: <span id="total-price">$0</span></span>
     </div>
-    <button class="btn-whatsapp" onclick="sendWhatsApp()">Pedir x WhatsApp</button>
+    <button class="btn-whatsapp" onclick="sendWhatsApp()">Pedir por WhatsApp</button>
   </div>
 
   <script>
     const menu = [
-      { id: 1, name: "Bondiola desmenuzada con boniato", desc: "Bondiola tiernizada con guarnición de boniatos.", price: 10500, img: "bondiola.jpg" },
-      { id: 2, name: "Wok de carne", desc: "Roast beef, cebolla, morrones y zanahoria.", price: 10500, img: "wok.jpg" },
-      { id: 3, name: "Pollo pata muslo al disco", desc: "Pollo, cebolla, morrones, zanahoria y puré de tomate.", price: 10500, img: "pollo-disco.jpg" },
-      { id: 4, name: "Pastel de carne", desc: "Roast beef picado, cebolla, morrones y boniato.", price: 10500, img: "pastel-carne.jpeg" },
-      { id: 5, name: "Pollo teriyaki con arroz", desc: "Pollo en salsa teriyaki acompañado de arroz blanco.", price: 10500, img: "pollo-teriyaki.jpeg" },
-      { id: 6, name: "Tarta de calabaza", desc: "Porción individual con masa casera.", price: 10500, img: "tarta-calabaza.jpg" }
+      { id: 1, name: "Bondiola desmenuzada con boniato", desc: "", img: "bondiola.jpg" },
+      { id: 2, name: "Wok de carne", desc: "roast beef, cebolla, morrones, zanahoria", img: "wok.jpg" },
+      { id: 3, name: "Pollo pata muslo al disco", desc: "pollo, cebolla, morrones, zanahoria, puré de tomate", img: "pollo-disco.jpg" },
+      { id: 4, name: "Pastel de carne", desc: "roast beef picado, cebolla, morrones, boniato", img: "pastel-carne.jpeg" },
+      { id: 5, name: "Pollo teriyaki con arroz", desc: "", img: "pollo-teriyaki.jpeg" },
+      { id: 6, name: "Tarta de calabaza", desc: "", img: "tarta-calabaza.jpg" },
+      { id: 7, name: "Tarta de cebolla caramelizada", desc: "", img: "https://placehold.co/400x180?text=Tarta+Cebolla" },
+      { id: 8, name: "Tarta de cebolla y puerro", desc: "", img: "https://placehold.co/400x180?text=Tarta+Puerro" },
+      { id: 9, name: "Tortilla de papa", desc: "", img: "https://placehold.co/400x180?text=Tortilla+Papa" }
     ];
 
     const cart = {};
@@ -176,13 +276,11 @@
       const container = document.getElementById('menu-grid');
       container.innerHTML = menu.map(item => `
         <div class="card">
-          <img src="${item.img}" alt="${item.name}" class="card-img" onerror="this.onerror=null; this.src='https://placehold.co/400x180?text=Foto+Vianda';">
+          <img src="${item.img}" alt="${item.name}" class="card-img" onerror="this.onerror=null; this.src='https://placehold.co/400x180?text=Óliva+Cocina';">
           <div class="card-body">
-            <h3>${item.name}</h3>
-            <p>${item.desc}</p>
-            <div class="card-meta">
-              <span class="weight">500g</span>
-              <span class="price">$${item.price.toLocaleString('es-AR')}</span>
+            <div>
+              <h3>${item.name}</h3>
+              ${item.desc ? `<p>(${item.desc})</p>` : ''}
             </div>
             <div class="controls">
               <button class="btn-qty" onclick="updateQty(${item.id}, -1)">-</button>
@@ -203,7 +301,7 @@
 
     function calculateTotal() {
       const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);
-      let pricePerUnit = 10500;
+      let pricePerUnit = 11000;
       
       if (totalCount >= 10) {
         pricePerUnit = 10000;
@@ -229,7 +327,7 @@
         }
       });
 
-      const pricePerUnit = totalCount >= 10 ? 10000 : 10500;
+      const pricePerUnit = totalCount >= 10 ? 10000 : 11000;
       message += `\nTotal viandas: ${totalCount}`;
       message += `\nTotal a pagar: $${(totalCount * pricePerUnit).toLocaleString('es-AR')}`;
 
