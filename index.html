@@ -1,10 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Óliva Cocina - Menú de Viandas</title>
+  
+  <!-- Carga de la tipografía estilo Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #3b4e32;
@@ -14,7 +19,13 @@
       --text: #2c2c2c;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; 
+    }
+
     body { background-color: var(--bg); color: var(--text); padding-bottom: 90px; }
 
     header {
@@ -23,8 +34,8 @@
       text-align: center;
       padding: 2rem 1rem;
     }
-    header h1 { font-size: 2.2rem; letter-spacing: 2px; }
-    header p { font-size: 0.95rem; opacity: 0.9; margin-top: 4px; }
+    header h1 { font-size: 2rem; letter-spacing: 1px; font-weight: 700; }
+    header p { font-size: 0.9rem; opacity: 0.9; margin-top: 6px; }
 
     .container { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; }
     
@@ -35,6 +46,7 @@
       border-radius: 10px;
       text-align: center;
       margin-bottom: 1.5rem;
+      font-size: 0.88rem;
     }
     .promo-banner strong { color: var(--primary); }
 
@@ -68,8 +80,8 @@
       flex-grow: 1;
     }
 
-    .card h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.4rem; }
-    .card p { font-size: 0.85rem; color: #666; margin-bottom: 0.8rem; flex-grow: 1; }
+    .card h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 0.4rem; font-weight: 600; }
+    .card p { font-size: 0.8rem; color: #555; margin-bottom: 0.8rem; flex-grow: 1; }
     
     .card-meta {
       display: flex;
@@ -77,8 +89,8 @@
       align-items: center;
       margin-bottom: 1rem;
     }
-    .weight { font-weight: bold; color: #888; font-size: 0.8rem; }
-    .price { font-weight: bold; color: var(--accent); font-size: 1.1rem; }
+    .weight { font-weight: 600; color: #888; font-size: 0.75rem; }
+    .price { font-weight: 700; color: var(--accent); font-size: 1rem; }
 
     .controls { display: flex; align-items: center; justify-content: space-between; background: #f0f4ee; padding: 6px 12px; border-radius: 20px; }
     .btn-qty {
@@ -90,8 +102,9 @@
       border-radius: 50%;
       font-size: 1.1rem;
       cursor: pointer;
+      font-family: inherit;
     }
-    .qty { font-weight: bold; font-size: 1rem; }
+    .qty { font-weight: 700; font-size: 0.95rem; }
 
     .cart-bar {
       position: fixed;
@@ -108,6 +121,7 @@
       margin: 0 auto;
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
+      font-size: 0.85rem;
     }
     .btn-whatsapp {
       background-color: #25d366;
@@ -115,9 +129,10 @@
       border: none;
       padding: 0.8rem 1.5rem;
       border-radius: 25px;
-      font-weight: bold;
-      font-size: 1rem;
+      font-weight: 700;
+      font-size: 0.9rem;
       cursor: pointer;
+      font-family: inherit;
     }
   </style>
 </head>
@@ -140,12 +155,12 @@
   <div class="cart-bar">
     <div>
       <span>Viandas elegidas: <strong id="total-count">0</strong></span><br>
-      <span>Total estimativo: <strong id="total-price" style="color:var(--accent); font-size: 1.2rem;">$0</strong></span>
+      <span>Total estimativo: <strong id="total-price" style="color:var(--accent); font-size: 1.1rem;">$0</strong></span>
     </div>
     <button class="btn-whatsapp" onclick="sendWhatsApp()">Pedir x WhatsApp</button>
   </div>
 
-<script>
+  <script>
     const menu = [
       { id: 1, name: "Bondiola desmenuzada con boniato", desc: "Bondiola tiernizada con guarnición de boniatos.", price: 10500, img: "bondiola.jpg" },
       { id: 2, name: "Wok de carne", desc: "Roast beef, cebolla, morrones y zanahoria.", price: 10500, img: "wok.jpg" },
@@ -226,5 +241,4 @@
   </script>
 </body>
 </html>
-   
 
