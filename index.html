@@ -26,7 +26,32 @@
       font-family: 'Montserrat', sans-serif;
       padding-bottom: 100px;
     }
- 
+  <!-- TOAST NOTIFICACIÓN -->
+  <div id="toast-notification">⚠️ El pedido mínimo es de 5 viandas.</div>
+
+  <!-- HERO HEADER DESTACADO -->
+  <header class="relative overflow-hidden bg-gradient-to-b from-[#f2e8de] via-[#f7f1eb] to-[#f7f1eb] border-b border-[#485236]/15 pt-8 pb-6 px-4 shadow-xs">
+    <!-- Adorno gráfico sutil de fondo -->
+    <div class="absolute -top-12 -left-12 w-40 h-40 bg-[#485236]/5 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-12 w-48 h-48 bg-[#c85a32]/5 rounded-full blur-2xl pointer-events-none"></div>
+
+    <div class="max-w-2xl mx-auto flex flex-col items-center justify-center text-center relative z-10">
+      
+      <!-- Insignia Superior -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-[#485236]/10 border border-[#485236]/20 text-[#485236] text-[0.7rem] font-semibold tracking-wider uppercase">
+        <span class="w-2 h-2 rounded-full bg-[#c85a32] animate-pulse"></span>
+        Cocina Artesanal • Viandas Saludables
+      </div>
+
+      <!-- Logo Principal (logo oliva cocina.jpg) -->
+      <div class="relative group my-1">
+        <img 
+          src="logo oliva cocina.jpg" 
+          alt="Óliva Cocina" 
+          class="logo-img drop-shadow-md transition-transform duration-300 group-hover:scale-105" 
+          onerror="if (!this.getAttribute('data-fallback')) { this.setAttribute('data-fallback', 'true'); this.src='etiqueta.jpg'; } else { this.onerror=null; this.src='https://placehold.co/320x100/f7f1eb/485236?text=%C3%93LIVA+COCINA'; }"
+        >
+      </div>
     /* ENCABEZADO CON LA IMAGEN REAL DEL LOGO */
     header {
       text-align: center;
