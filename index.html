@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,14 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Óliva Cocina - Menú Viandas</title>
   
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root {
       --bg-color: #f7f1eb;
       --olive-green: #485236;
+      --olive-light: #5f6c48;
+      --terracota: #c85a32;
       --text-dark: #2b2b2b;
       --card-bg: #ffffff;
     }
@@ -24,8 +29,258 @@
       background-color: var(--bg-color);
       color: var(--text-dark);
       font-family: 'Montserrat', sans-serif;
-      padding-bottom: 100px;
+      padding-bottom: 110px;
     }
+ 
+    /* ENCABEZADO Y LOGO */
+    header {
+      text-align: center;
+      padding: 1.8rem 1rem 1rem 1rem;
+      background: rgba(247, 241, 235, 0.95);
+    }
+
+    .logo-img {
+      max-width: 320px;
+      width: 85%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      mix-blend-mode: multiply;
+      object-fit: contain;
+    }
+
+    .main-title-container {
+      margin-top: 0.8rem;
+    }
+
+    .main-title {
+      font-family: 'Oswald', sans-serif;
+      color: var(--olive-green);
+      font-size: 2.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .main-title span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-style: italic;
+      text-transform: lowercase;
+      font-size: 1.9rem;
+      letter-spacing: 0;
+      color: var(--terracota);
+      margin-right: 6px;
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--olive-green);
+      opacity: 0.85;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* CONTENEDOR Y CAJA DE PRECIOS */
+    .container {
+      max-width: 850px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
+
+    .price-box {
+      border: 1.5px solid var(--olive-green);
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 1.8rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 15px rgba(72, 82, 54, 0.05);
+    }
+
+    .price-item {
+      font-family: 'Oswald', sans-serif;
+      color: var(--olive-green);
+      font-size: 1.4rem;
+    }
+
+    .price-item small {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      color: var(--text-dark);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .price-divider {
+      height: 32px;
+      border-left: 1.5px dashed var(--olive-green);
+      opacity: 0.5;
+    }
+
+    /* GRID DE TARJETAS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(72, 82, 54, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      font-family: 'Oswald', sans-serif;
+      color: var(--olive-green);
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.3rem;
+      line-height: 1.25;
+    }
+
+    .card p {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f0eae1;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--olive-green);
+    }
+
+    .btn-qty {
+      background: var(--olive-green);
+      color: white;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-qty:active {
+      background: var(--terracota);
+    }
+
+    .qty { font-weight: 700; font-size: 0.95rem; color: var(--olive-green); }
+
+    /* BARRA INFERIOR DEL CARRITO */
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--olive-green);
+      color: white;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 850px;
+      margin: 0 auto;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+      z-index: 50;
+    }
+
+    .btn-whatsapp {
+      background-color: #ffffff;
+      color: var(--olive-green);
+      border: none;
+      padding: 0.75rem 1.4rem;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #f7f1eb;
+      transform: scale(1.02);
+    }
+
+    /* TOAST ALERT REEMPLAZO DE ALERT() */
+    #toast-notification {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      background-color: #2b2b2b;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 100;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      pointer-events: none;
+      border-left: 4px solid var(--terracota);
+    }
+
+    #toast-notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
   <!-- TOAST NOTIFICACIÓN -->
   <div id="toast-notification">⚠️ El pedido mínimo es de 5 viandas.</div>
 
@@ -52,234 +307,71 @@
           onerror="if (!this.getAttribute('data-fallback')) { this.setAttribute('data-fallback', 'true'); this.src='etiqueta.jpg'; } else { this.onerror=null; this.src='https://placehold.co/320x100/f7f1eb/485236?text=%C3%93LIVA+COCINA'; }"
         >
       </div>
-    /* ENCABEZADO CON LA IMAGEN REAL DEL LOGO */
-    header {
-      text-align: center;
-      padding: 2rem 1rem 1rem 1rem;
-    }
+      
+      <!-- Título de Sección Hero -->
+      <div class="main-title-container text-center mt-2">
+        <h1 class="main-title text-3xl sm:text-4xl">
+          <span>menú</span>VIANDAS
+        </h1>
+        <p class="subtitle mt-1 text-xs sm:text-sm text-[#485236] font-medium tracking-widest opacity-90">
+          CONGELABLES • CASERAS • LISTAS PARA DISFRUTAR
+        </p>
+      </div>
 
-    .logo-img {
-      max-width: 320px;
-      width: 90%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      mix-blend-mode: multiply; /* Fusiona el fondo blanco de la foto con el fondo del sitio */
-    }
+      <!-- Beneficios Destacados en el Hero -->
+      <div class="flex flex-wrap justify-center gap-3 mt-4 text-[0.75rem] font-semibold text-[#485236]/90">
+        <span class="flex items-center gap-1 bg-white/70 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-[#485236]/10 shadow-2xs">
+          ❄️ 100% Freezables
+        </span>
+        <span class="flex items-center gap-1 bg-white/70 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-[#485236]/10 shadow-2xs">
+          🍲 Porciones de 500g
+        </span>
+        <span class="flex items-center gap-1 bg-white/70 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-[#485236]/10 shadow-2xs">
+          🛵 Envíos a Domicilio
+        </span>
+      </div>
 
-    .main-title-container {
-      margin-top: 1rem;
-    }
+    </div>
+  </header>
 
-    .main-title {
-      font-family: 'Oswald', sans-serif;
-      color: var(--olive-green);
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-
-    .main-title span {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-style: italic;
-      text-transform: lowercase;
-      font-size: 2rem;
-      letter-spacing: 0;
-    }
-
-    /* CONTENEDOR Y CAJA DE PRECIOS */
-    .container {
-      max-width: 850px;
-      margin: 1rem auto;
-      padding: 0 1rem;
-    }
-
-    .price-box {
-      border: 1.5px solid var(--olive-green);
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      margin-bottom: 2rem;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      background: rgba(255,255,255,0.4);
-    }
-
-    .price-item {
-      font-family: 'Oswald', sans-serif;
-      color: var(--olive-green);
-      font-size: 1.4rem;
-    }
-
-    .price-item small {
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.8rem;
-      color: var(--text-dark);
-      font-weight: 600;
-    }
-
-    /* GRID DE TARJETAS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      border: 1px solid rgba(72, 82, 54, 0.15);
-    }
-
-    .card-img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-    }
-
-    .card-body {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: space-between;
-    }
-
-    .card h3 {
-      font-family: 'Oswald', sans-serif;
-      color: var(--olive-green);
-      font-size: 1.2rem;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.3rem;
-    }
-
-    .card p {
-      font-size: 0.8rem;
-      font-style: italic;
-      color: #555;
-      margin-bottom: 0.8rem;
-    }
-
-    .controls {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #f0eae1;
-      padding: 4px 10px;
-      border-radius: 20px;
-      border: 1px solid var(--olive-green);
-    }
-
-    .btn-qty {
-      background: var(--olive-green);
-      color: white;
-      border: none;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .qty { font-weight: 700; font-size: 0.9rem; }
-
-    /* BARRA INFERIOR DEL CARRITO */
-    .cart-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--olive-green);
-      color: white;
-      padding: 0.9rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 850px;
-      margin: 0 auto;
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-    }
-
-    .btn-whatsapp {
-      background-color: #ffffff;
-      color: var(--olive-green);
-      border: none;
-      padding: 0.7rem 1.3rem;
-      border-radius: 25px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <header class="sticky top-0 z-40 glass-header border-b border-oliva-100 py-4 shadow-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
-            
-            <!-- Logo principal destacado y más ancho -->
-            <div class="w-full flex justify-center mb-2">
-                <img src="etiqueta.jpg" alt="Óliva Cocina" class="w-48 sm:w-64 md:w-80 max-w-full h-auto object-contain drop-shadow-xs" onerror="this.onerror=null; this.style.display='none';">
-            </div>
-
-            <!-- Título menú VIANDAS centrado -->
-            <div class="main-title-container text-center mt-1">
-                <h1 class="main-title text-2xl sm:text-3xl md:text-4xl font-black text-oliva-800 tracking-widest uppercase leading-tight text-center">
-                    <span class="text-terracota-500 font-serif italic lowercase text-2xl sm:text-3xl font-normal mr-1.5">menú</span>VIANDAS
-                </h1>
-                <p class="text-[11px] sm:text-xs font-bold text-oliva-600 mt-0.5 tracking-[0.25em] uppercase text-center">Cocina Artesanal • Viandas Congelables</p>
-            </div>
-
-        </div>
-    </header>
-
+  <!-- CONTENIDO PRINCIPAL -->
   <div class="container">
     <div class="price-box">
       <div class="price-item">
-        <small>5 MENÚS</small>
-        $11.000 <span style="font-size:0.9rem">c/u</span>
+        <small>5 A 9 VIANDAS</small>
+        $11.000 <span style="font-size:0.85rem; font-weight:400;">c/u</span>
       </div>
-      <div style="height:30px; border-left:1px solid var(--olive-green)"></div>
+      <div class="price-divider"></div>
       <div class="price-item">
-        <small>10 MENÚS</small>
-        $10.000 <span style="font-size:0.9rem">c/u</span>
+        <small>10 O MÁS VIANDAS</small>
+        $10.000 <span style="font-size:0.85rem; font-weight:400;">c/u</span>
       </div>
     </div>
 
     <div class="grid" id="menu-grid"></div>
   </div>
 
+  <!-- BARRA INFERIOR DE CARRITO -->
   <div class="cart-bar">
     <div>
-      <span style="font-size:0.85rem;">Total viandas: <strong id="total-count">0</strong></span><br>
-      <span style="font-size:1.1rem; font-weight:700;">Total: <span id="total-price">$0</span></span>
+      <span style="font-size:0.8rem; opacity: 0.9;">Total viandas: <strong id="total-count" style="font-size: 0.95rem;">0</strong></span><br>
+      <span style="font-size:1.15rem; font-weight:700;">Total: <span id="total-price">$0</span></span>
     </div>
     <button class="btn-whatsapp" onclick="sendWhatsApp()">Pedir por WhatsApp</button>
   </div>
 
+  <!-- LÓGICA DE JAVASCRIPT -->
   <script>
     const menu = [
       { id: 1, name: "Bondiola desmenuzada con boniato", desc: "Bondiola de cerdo en cocción lenta de 4hs, boniatos asados a las finas hierbas", img: "bondiola.jpg" },
       { id: 2, name: "Wok de Pollo con Vegetales", desc: "Pechuga de pollo, cebolla, morrones, zanahoria salteadas crujiente y sésamo", img: "wok.jpg" },
-      { id: 3, name: "Canelones de Calabaza, Ricota y Mozzarella", desc: "Calabaza dulce horneada, ricota fresca magra, mozzarella, salsa blanca y salsa fileto.", img: "wok.jpg" },
+      { id: 3, name: "Canelones de Calabaza, Ricota y Mozzarella", desc: "Calabaza dulce horneada, ricota fresca magra, mozzarella, salsa blanca y salsa fileto.", img: "canelones.jpg" },
       { id: 4, name: "Pastel de carne", desc: "Roast beef picado, cebolla, morrones, boniato", img: "pastel-carne.jpeg" },
-      { id: 5, name: "Cazuela de Pollo al Curry Cremoso con Arroz Yamaní", desc: "Pollo en salsa cremosa de curry suave y leche de coco,arroz yamaní", img: "pollo-teriyaki.jpeg" },
+      { id: 5, name: "Cazuela de Pollo al Curry Cremoso con Arroz Yamaní", desc: "Pollo en salsa cremosa de curry suave y leche de coco, arroz yamaní", img: "pollo-teriyaki.jpeg" },
       { id: 6, name: "Tarta de calabaza", desc: "Masa quebrada casera, puré de calabaza horneada.", img: "tarta-calabaza.jpg" },
-      { id: 7, name: "Tarta de cebolla caramelizada", desc: "Masa quebrada casera, cebolla caramelizada.", img: "tarta-calabaza.jpg" },
-      { id: 8, name: "Tarta de cebolla y puerro", desc: "Masa quebrada casera, cebolla y puerros rehogados.", img: "tarta-calabaza.jpg" },
-      ];
+      { id: 7, name: "Tarta de cebolla caramelizada", desc: "Masa quebrada casera, cebolla caramelizada.", img: "tarta-cebolla.jpg" },
+      { id: 8, name: "Tarta de cebolla y puerro", desc: "Masa quebrada casera, cebolla y puerros rehogados.", img: "tarta-puerro.jpg" }
+    ];
 
     const cart = {};
 
@@ -287,7 +379,12 @@
       const container = document.getElementById('menu-grid');
       container.innerHTML = menu.map(item => `
         <div class="card">
-          <img src="${item.img}" alt="${item.name}" class="card-img" onerror="this.onerror=null; this.src='https://placehold.co/400x180?text=Óliva+Cocina';">
+          <img 
+            src="${item.img}" 
+            alt="${item.name}" 
+            class="card-img" 
+            onerror="this.onerror=null; this.src='https://placehold.co/400x240/485236/FFFFFF?text=${encodeURIComponent(item.name)}';"
+          >
           <div class="card-body">
             <div>
               <h3>${item.name}</h3>
@@ -324,10 +421,19 @@
       document.getElementById('total-price').innerText = `$${totalPrice.toLocaleString('es-AR')}`;
     }
 
+    function showToast(text) {
+      const toast = document.getElementById('toast-notification');
+      toast.innerText = text;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
     function sendWhatsApp() {
       const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);
       if (totalCount < 5) {
-        alert("El pedido mínimo es de 5 viandas.");
+        showToast("⚠️ El pedido mínimo es de 5 viandas.");
         return;
       }
 
@@ -346,6 +452,7 @@
       window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
     }
 
+    // Inicializar menú
     renderMenu();
   </script>
 </body>
