@@ -324,7 +324,7 @@
           🍲 Porciones de 500g
         </span>
         <span class="flex items-center gap-1 bg-white/70 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-[#485236]/10 shadow-2xs">
-          🛵 Envíos a Domicilio
+          🛵 Envíos a Domicilio-Pilar
         </span>
       </div>
 
@@ -361,13 +361,13 @@
   <script>
     const menu = [
       { id: 1, name: "Bondiola desmenuzada con boniato", desc: "Bondiola de cerdo en cocción lenta de 4hs, boniatos asados a las finas hierbas", img: "bondiola.jpg" },
-      { id: 2, name: "Wok de Pollo con Vegetales", desc: "Pechuga de pollo, cebolla, morrones, zanahoria salteadas crujiente y sésamo", img: "wok.jpg" },
-      { id: 3, name: "Canelones de Calabaza, Ricota y Mozzarella", desc: "Calabaza dulce horneada, ricota fresca magra, mozzarella, salsa blanca y salsa fileto.", img: "canelones.jpg" },
-      { id: 4, name: "Pastel de carne", desc: "Roast beef picado, cebolla, morrones, boniato", img: "pastel-carne.jpeg" },
-      { id: 5, name: "Cazuela de Pollo al Curry Cremoso con Arroz Yamaní", desc: "Pollo en salsa cremosa de curry suave y leche de coco, arroz yamaní", img: "pollo-teriyaki.jpeg" },
-      { id: 6, name: "Tarta de calabaza", desc: "Masa quebrada casera, puré de calabaza horneada.", img: "tarta-calabaza.jpg" },
-      { id: 7, name: "Tarta de cebolla caramelizada", desc: "Masa quebrada casera, cebolla caramelizada.", img: "tarta-cebolla.jpg" },
-      { id: 8, name: "Tarta de cebolla y puerro", desc: "Masa quebrada casera, cebolla y puerros rehogados.", img: "tarta-puerro.jpg" }
+      { id: 2, name: "Wok de Pollo con Vegetales", desc: "Pechuga de pollo, cebolla, morrones, zanahoria salteadas crujiente y sésamo", img: "wok-pollo.jpeg" },
+      { id: 3, name: "Laña de verduras con carne", desc: "Verduras grilladas, carne, mozzarella, salsa fileto.", img: "lasaña-verduras.jpeg" },
+      { id: 4, name: "Pastel de carne", desc: "Roast beef picado, cebolla, morrones, boniato", img: "paste-carne.jpeg" },
+      { id: 5, name: "Cazuela de Pollo al Curry Cremoso con Arroz Yamaní", desc: "Pollo en salsa cremosa de curry suave y leche de coco, arroz yamaní", img: "pollo-curry-yamani.jpeg" },
+      { id: 6, name: "Tarta de calabaza", desc: "Masa quebrada casera, puré de calabaza horneada.", img: "tartas.jpeg" },
+      { id: 7, name: "Tarta de cebolla caramelizada", desc: "Masa quebrada casera, cebolla caramelizada.", img: "tarta-cebolla-caramelizada.jpeg" },
+      { id: 8, name: "Tarta de cebolla y puerro", desc: "Masa quebrada casera, cebolla y puerros rehogados.", img: "tartas.jpeg" }
     ];
 
     const cart = {};
@@ -441,7 +441,7 @@
         }
       });
 
-      const pricePerUnit = totalCount >= 10 ? 10000 : 11000;
+      const pricePerUnit = totalCount >= 10 ? 13000 : 12000;
       message += `\nTotal viandas: ${totalCount}`;
       message += `\nTotal a pagar: $${(totalCount * pricePerUnit).toLocaleString('es-AR')}`;
 
