@@ -428,6 +428,21 @@
       }, 3000);
     }
 
+  function calculateTotal() {
+      const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);
+      
+      // Corregido: Si lleva 10 o más cuesta $12.000, si lleva entre 5 y 9 cuesta $13.000
+      let pricePerUnit = 13000;
+      if (totalCount >= 10) {
+        pricePerUnit = 12000;
+      }
+
+      const totalPrice = totalCount * pricePerUnit;
+
+      document.getElementById('total-count').innerText = totalCount;
+      document.getElementById('total-price').innerText = `$${totalPrice.toLocaleString('es-AR')}`;
+    }
+
     function sendWhatsApp() {
       const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);
       if (totalCount < 5) {
@@ -442,9 +457,12 @@
         }
       });
 
-      const pricePerUnit = totalCount >= 10 ? 13000 : 12000;
+      // Corregido: Lógica de precio correcto para el mensaje de WhatsApp
+      const pricePerUnit = totalCount >= 10 ? 12000 : 13000;
+      const totalPrice = totalCount * pricePerUnit;
+
       message += `\nTotal viandas: ${totalCount}`;
-      message += `\nTotal a pagar: $${(totalCount * pricePerUnit).toLocaleString('es-AR')}`;
+      message += `\nTotal a pagar: $${totalPrice.toLocaleString('es-AR')}`;
 
       const phone = "5491178204603";
       window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
