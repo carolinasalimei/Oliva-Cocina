@@ -407,10 +407,10 @@
 
     function calculateTotal() {
       const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);
-      let pricePerUnit = 11000;
       
+      let pricePerUnit = 13000;
       if (totalCount >= 10) {
-        pricePerUnit = 10000;
+        pricePerUnit = 12000;
       }
 
       const totalPrice = totalCount * pricePerUnit;
@@ -428,21 +428,6 @@
       }, 3000);
     }
 
-  function calculateTotal() {
-      const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);
-      
-      // Corregido: Si lleva 10 o más cuesta $12.000, si lleva entre 5 y 9 cuesta $13.000
-      let pricePerUnit = 13000;
-      if (totalCount >= 10) {
-        pricePerUnit = 12000;
-      }
-
-      const totalPrice = totalCount * pricePerUnit;
-
-      document.getElementById('total-count').innerText = totalCount;
-      document.getElementById('total-price').innerText = `$${totalPrice.toLocaleString('es-AR')}`;
-    }
-
     function sendWhatsApp() {
       const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);
       if (totalCount < 5) {
@@ -457,7 +442,6 @@
         }
       });
 
-      // Corregido: Lógica de precio correcto para el mensaje de WhatsApp
       const pricePerUnit = totalCount >= 10 ? 12000 : 13000;
       const totalPrice = totalCount * pricePerUnit;
 
